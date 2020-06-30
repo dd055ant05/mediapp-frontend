@@ -1,0 +1,22 @@
+<mat-card>Ingrese los datos del examen</mat-card>
+<form class="example-container" [formGroup]="form" #frmExamen="ngForm" (ngSubmit)="operar()">
+    <div [hidden]="true">
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="ID" required formControlName="id">
+        </mat-form-field>
+    </div>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Nombre" minlength="3" required formControlName="nombre">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Descripcion" minlength="3" required formControlName="descripcion">
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" [disabled]="frmExamen.invalid">
+        <mat-icon>done</mat-icon>
+        <span>Aceptar</span>
+    </button>
+    <button mat-raised-button color="accent" type="button" routerLink="/examen">
+        <mat-icon>close</mat-icon>
+        <span>Cancelar</span>
+    </button>
+</form>

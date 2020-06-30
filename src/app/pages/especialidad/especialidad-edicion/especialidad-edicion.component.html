@@ -1,0 +1,19 @@
+<mat-card>Ingrese los datos de la especialidad</mat-card>
+<form class="example-container" [formGroup]="form" #frmEspecialidad="ngForm" (ngSubmit)="operar()">
+    <div [hidden]="true">
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="ID" required formControlName="id">
+        </mat-form-field>
+    </div>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Nombre" minlength="3" required formControlName="nombre">
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" [disabled]="frmEspecialidad.invalid">
+        <mat-icon>done</mat-icon>
+        <span>Aceptar</span>
+    </button>
+    <button mat-raised-button color="accent" type="button" routerLink="/especialidad">
+        <mat-icon>close</mat-icon>
+        <span>Cancelar</span>
+    </button>
+</form>
